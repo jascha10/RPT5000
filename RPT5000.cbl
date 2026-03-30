@@ -53,8 +53,8 @@
         
 
        01  CONTROL-FIELDS.
-           05 WS-CURRENT-BRANCH      PIC 99 VALUE ZERO.
-           05 WS-PREVIOUS-BRANCH     PIC 99 VALUE ZERO.
+           05 OLD-BRANCH-NUMBER      PIC 99 VALUE ZERO.
+           05 OLD-SALESREP-NUMBER    PIC 99 VALUE ZERO.
 
        01  PRINT-FIELDS.
            05 PAGE-COUNT             PIC 9(3) VALUE ZERO.
