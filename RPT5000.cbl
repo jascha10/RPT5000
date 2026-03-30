@@ -171,6 +171,20 @@
            05 CL-CHANGE-PERCENT      PIC ZZ9.9-.
            05 FILLER                 PIC X(31) VALUE SPACES.
 
+       01  SALESREP-TOTAL-LINE.
+           05 FILLER                 PIC X(32) VALUE SPACES.
+           05 FILLER                 PIC X(14) VALUE "SALESREP TOTAL".
+           05 SRTL-SALES-THIS-YTD    PIC Z,ZZZ,ZZ9.99.
+           05 FILLER                 PIC X(3)  VALUE SPACES.
+           05 SRTL-SALES-LAST-YTD    PIC Z,ZZZ,ZZ9.99.
+           05 FILLER                 PIC X(3)  VALUE SPACES.
+           05 SRTL-CHANGE-AMOUNT     PIC Z,ZZZ,ZZ9.99-.
+           05 FILLER                 PIC X(3)  VALUE SPACES.
+           05 SRTL-CHANGE-PERCENT    PIC ZZ9.9-.
+           05 FILLER                 PIC X(2)  VALUE SPACES.
+           05 FILLER                 PIC X(1)  VALUE "*".
+           05 FILLER                 PIC X(36) VALUE SPACES. 
+
        01  BRANCH-TOTAL-LINE.
            05 FILLER                 PIC X(8) VALUE SPACE.
            05 FILLER                 PIC X(13) VALUE "BRANCH TOTAL".
@@ -218,6 +232,14 @@
 
            CLOSE I_CUSTMAST O_RPT5000
            STOP RUN.
+
+       100-FORMAT-REPORT-HEADING.
+           MOVE FUNCTION CURRENT-DATE TO CURRENT-DATE-AND-TIME.
+           MOVE CD-MONTH   TO HL1-MONTH.
+           MOVE CD-DAY     TO HL1-DAY.
+           MOVE CD-YEAR    TO HL1-YEAR.
+           MOVE CD-HOURS   TO HL2-HOURS.
+           MOVE CD-MINUTES TO HL2-MINUTES.
 
        210-READ-CUSTOMER-RECORD.
            READ I_CUSTMAST
