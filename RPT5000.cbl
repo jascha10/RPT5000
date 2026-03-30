@@ -56,15 +56,11 @@
            05 WS-CURRENT-BRANCH      PIC 99 VALUE ZERO.
            05 WS-PREVIOUS-BRANCH     PIC 99 VALUE ZERO.
 
-       01  BRANCH-TOTALS.
-           05 BT-THIS-YTD            PIC S9(9)V99 VALUE ZERO.
-           05 BT-LAST-YTD            PIC S9(9)V99 VALUE ZERO.
-           05 BT-CHANGE              PIC S9(9)V99 VALUE ZERO.
-
-       01  PAGE-INFO.
+       01  PRINT-FIELDS.
            05 PAGE-COUNT             PIC 9(3) VALUE ZERO.
            05 LINE-COUNT             PIC 9(3) VALUE 99.
            05 LINES-ON-PAGE          PIC 9(3) VALUE 55.
+           05 SPACE-CONTROL          PIC 9 VALUE 1
 
        01  TOTAL-FIELDS.
            05 SALESREP-TOTAL-THIS-YTD PIC S9(6)V99 VALUE ZERO.
