@@ -2,9 +2,14 @@
        PROGRAM-ID. RPT5000.
       ****************************************************************
       * PROGRAM NAME: RPT5000
-      * AUTHORS: Jacob
+      * AUTHORS: Jacob Schamp
       * DATE: 03/25/2026
-      * DESCRIPTION: Year-To-Date Sales Report with Change Columns
+      * Github: 
+      * DESCRIPTION: The program reads customer master records and 
+      * produces a Year-To-Date Sales report. It then prints customer
+      * sales for the current and previous year, calculates the
+      * change amount and percentage, and displays salesrep totals,
+      * branch totals, and grand totals.
       ****************************************************************
 
        ENVIRONMENT DIVISION.
