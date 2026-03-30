@@ -75,10 +75,10 @@
 
        01  CURRENT-DATE-AND-TIME.
            05 CD-YEAR                PIC 9(4).
-           05 CD-MONTH               PIC 9(2).
-           05 CD-DAY                 PIC 9(2).
-           05 CD-HOURS               PIC 9(2).
-           05 CD-MINUTES             PIC 9(2).
+           05 CD-MONTH               PIC 9.
+           05 CD-DAY                 PIC 9.
+           05 CD-HOURS               PIC 9.
+           05 CD-MINUTES             PIC 9.
            05 FILLER                 PIC X(9).
 
        01  HEADING-LINE-1.
@@ -134,6 +134,23 @@
            05 FILLER PIC X(6)  VALUE "AMOUNT".
            05 FILLER PIC X(4)  VALUE SPACE.
            05 FILLER PIC X(7)  VALUE "PERCENT".
+        
+       01  DASH-LINE.
+           05 FILLER PIC X(6)  VALUE "------".
+           05 FILLER PIC X(2)  VALUE SPACES.
+           05 FILLER PIC X(6)  VALUE "------".
+           05 FILLER PIC X(2)  VALUE SPACES.
+           05 FILLER PIC X(6) VALUE "------".
+           05 FILLER PIC X(2)  VALUE SPACES.
+           05 FILLER PIC X(25) VALUE "--------------------".
+           05 FILLER PIC X(3)  VALUE SPACES.
+           05 FILLER PIC X(13) VALUE "-------------".
+           05 FILLER PIC X(3)  VALUE SPACES.
+           05 FILLER PIC X(13) VALUE "-------------".
+           05 FILLER PIC X(3)  VALUE SPACES.
+           05 FILLER PIC X(13) VALUE "-------------".
+           05 FILLER PIC X(3)  VALUE SPACES.
+           05 FILLER PIC X(13) VALUE "-------------".
 
        01  CUSTOMER-LINE.
            05 CL-BRANCH              PIC 99.
