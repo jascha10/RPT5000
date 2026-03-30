@@ -45,7 +45,12 @@
 
        WORKING-STORAGE SECTION.
 
-       01  CUSTMAST-EOF-SWITCH       PIC X VALUE "N".
+       01  SWITCHES.     
+            05 CUSTMAST-EOF-SWITCH   PIC X VALUE "N".
+                88 CUSTMAST-EOF      VALUE "Y".
+            05 FIRST-RECORD-SWITCH   PIC X VALUE "Y".
+                88 FIRST-RECORD      VALUE "Y".
+        
 
        01  CONTROL-FIELDS.
            05 WS-CURRENT-BRANCH      PIC 99 VALUE ZERO.
