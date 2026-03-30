@@ -153,21 +153,23 @@
            05 FILLER PIC X(13) VALUE "-------------".
 
        01  CUSTOMER-LINE.
-           05 CL-BRANCH              PIC 99.
-           05 FILLER                 PIC X VALUE SPACE.
-           05 CL-REP                 PIC 99.
-           05 FILLER                 PIC X VALUE SPACE.
-           05 CL-CUST                PIC 9(5).
-           05 FILLER                 PIC X(7) VALUE SPACE.
-           05 CL-NAME                PIC X(20).
-           05 FILLER                 PIC X(6) VALUE SPACE.
-           05 CL-THIS                PIC Z,ZZZ,ZZ9.99-.
-           05 FILLER                 PIC X(4) VALUE SPACE.
-           05 CL-LAST                PIC Z,ZZZ,ZZ9.99-.
-           05 FILLER                 PIC X(4) VALUE SPACE.
-           05 CL-CHANGE              PIC Z,ZZZ,ZZ9.99-.
-           05 FILLER                 PIC X(4) VALUE SPACE.
-           05 CL-PERCENT             PIC ZZZ9.9-.
+           05 FILLER                 PIC X(1)  VALUE SPACE.
+           05 CL-BRANCH-NUMBER       PIC X(2).
+           05 FILLER                 PIC X(7)  VALUE SPACES.
+           05 CL-SALESREP-NUMBER     PIC X(2).
+           05 FILLER                 PIC X(4)  VALUE SPACES.
+           05 CL-CUSTOMER-NUMBER     PIC 9(5).
+           05 FILLER                 PIC X(3)  VALUE SPACES.
+           05 CL-CUSTOMER-NAME       PIC X(25).
+           05 FILLER                 PIC X(3)  VALUE SPACES.
+           05 CL-SALES-THIS-YTD      PIC Z,ZZZ,ZZ9.99.
+           05 FILLER                 PIC X(3)  VALUE SPACES.
+           05 CL-SALES-LAST-YTD      PIC Z,ZZZ,ZZ9.99.
+           05 FILLER                 PIC X(3)  VALUE SPACES.
+           05 CL-CHANGE-AMOUNT       PIC Z,ZZZ,ZZ9.99-.
+           05 FILLER                 PIC X(3)  VALUE SPACES.
+           05 CL-CHANGE-PERCENT      PIC ZZ9.9-.
+           05 FILLER                 PIC X(31) VALUE SPACES.
 
        01  BRANCH-TOTAL-LINE.
            05 FILLER                 PIC X(8) VALUE SPACE.
