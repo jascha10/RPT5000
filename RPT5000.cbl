@@ -266,10 +266,10 @@
                    PERFORM 320-PRINT-CUSTOMER-LINE
            END-EVALUATE.
 
-       210-READ-CUSTOMER-RECORD.
+       310-READ-CUSTOMER-RECORD.
            READ I_CUSTMAST
                AT END
-                   MOVE "Y" TO CUSTMAST-EOF-SWITCH
+                   SET CUSTMAST-EOF TO TRUE
            END-READ.
 
        220-PROCESS-CUSTOMER-RECORD.
