@@ -105,9 +105,9 @@
 
        01  HEADING-LINE-3.
            05 FILLER PIC X(6)  VALUE "BRANCH".
-           05 FILLER PIC X     VALUE SPACE.
+           05 FILLER PIC X(3)  VALUE SPACE.
            05 FILLER PIC X(5)  VALUE "SALES".
-           05 FILLER PIC X     VALUE SPACE.
+           05 FILLER PIC X(5)  VALUE SPACE.
            05 FILLER PIC X(4)  VALUE "CUST".
            05 FILLER PIC X(28) VALUE SPACE.
            05 FILLER PIC X(10) VALUE "SALES".
@@ -137,12 +137,12 @@
         
        01  DASH-LINE.
            05 FILLER PIC X(6)  VALUE "------".
-           05 FILLER PIC X(2)  VALUE SPACES.
+           05 FILLER PIC X(3)  VALUE SPACES.
            05 FILLER PIC X(6)  VALUE "------".
            05 FILLER PIC X(2)  VALUE SPACES.
            05 FILLER PIC X(6) VALUE "------".
            05 FILLER PIC X(2)  VALUE SPACES.
-           05 FILLER PIC X(25) VALUE "--------------------".
+           05 FILLER PIC X(12) VALUE "--------------------".
            05 FILLER PIC X(3)  VALUE SPACES.
            05 FILLER PIC X(13) VALUE "-------------".
            05 FILLER PIC X(3)  VALUE SPACES.
@@ -160,7 +160,7 @@
            05 FILLER                 PIC X(4)  VALUE SPACES.
            05 CL-CUSTOMER-NUMBER     PIC 9(5).
            05 FILLER                 PIC X(3)  VALUE SPACES.
-           05 CL-CUSTOMER-NAME       PIC X(25).
+           05 CL-CUSTOMER-NAME       PIC X(20).
            05 FILLER                 PIC X(3)  VALUE SPACES.
            05 CL-SALES-THIS-YTD      PIC Z,ZZZ,ZZ9.99.
            05 FILLER                 PIC X(3)  VALUE SPACES.
@@ -187,7 +187,7 @@
 
        01  BRANCH-TOTAL-LINE.
            05 FILLER                 PIC X(8) VALUE SPACE.
-           05 FILLER                 PIC X(13) VALUE "BRANCH TOTAL".
+           05 FILLER                 PIC X(30) VALUE "BRANCH TOTAL".
            05 FILLER                 PIC X(8) VALUE SPACE.
            05 BTL-THIS               PIC Z,ZZZ,ZZ9.99-.
            05 FILLER                 PIC X(4) VALUE SPACE.
@@ -324,7 +324,7 @@
 
        330-PRINT-HEADINGS.
            ADD 1 TO PAGE-COUNT.
-           MOVE PAGE-COUNT TO HL1-PAGE-NUMBER.
+           MOVE PAGE-COUNT TO HL1-PAGE.
 
            MOVE HEADING-LINE-1 TO PRINT-AREA.
            PERFORM 340-WRITE-PAGE-TOP-LINE.
@@ -375,12 +375,12 @@
            MOVE ZERO TO SALESREP-TOTAL-LAST-YTD.
 
        360-PRINT-BRANCH-LINE.
-           MOVE BRANCH-TOTAL-THIS-YTD TO BTL-SALES-THIS-YTD.
-           MOVE BRANCH-TOTAL-LAST-YTD TO BTL-SALES-LAST-YTD.
+           MOVE BRANCH-TOTAL-THIS-YTD TO BTL-THIS.
+           MOVE BRANCH-TOTAL-LAST-YTD TO BTL-LAST.
 
            COMPUTE CHANGE-AMOUNT =
                BRANCH-TOTAL-THIS-YTD - BRANCH-TOTAL-LAST-YTD.
-           MOVE CHANGE-AMOUNT TO BTL-CHANGE-AMOUNT.
+           MOVE CHANGE-AMOUNT TO BTL-CHANGE.
            IF BRANCH-TOTAL-LAST-YTD = ZERO
                MOVE 999.9 TO BTL-CHANGE-PERCENT
            ELSE
@@ -402,13 +402,13 @@
            MOVE ZERO TO BRANCH-TOTAL-LAST-YTD.
 
        500-PRINT-GRAND-TOTALS.
-           MOVE GRAND-TOTAL-THIS-YTD TO GTL-SALES-THIS-YTD.
-           MOVE GRAND-TOTAL-LAST-YTD TO GTL-SALES-LAST-YTD.
+           MOVE GRAND-TOTAL-THIS-YTD TO GTL-THIS.
+           MOVE GRAND-TOTAL-LAST-YTD TO GTL-LAST.
            COMPUTE CHANGE-AMOUNT =
                GRAND-TOTAL-THIS-YTD - GRAND-TOTAL-LAST-YTD.
-           MOVE CHANGE-AMOUNT TO GTL-CHANGE-AMOUNT.
+           MOVE CHANGE-AMOUNT TO GTL-CHANGE.
            IF GRAND-TOTAL-LAST-YTD = ZERO
-               MOVE 999.9 TO GTL-CHANGE-PERCENT
+               MOVE 999.9 TO GTL-PERCENT
            ELSE
                COMPUTE GTL-CHANGE-PERCENT ROUNDED =
                    CHANGE-AMOUNT * 100 / GRAND-TOTAL-LAST-YTD
