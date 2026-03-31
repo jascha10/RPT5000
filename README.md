@@ -55,13 +55,13 @@ For each run, the program:
 ## 🖥️ Output Example
 RPT5000:
 
-<img width="691" height="472" alt="image" src="https://github.com/user-attachments/assets/37f2e66d-e824-40f2-803a-ced8adf8ddd4" />
+<img width="691" height="472" alt="image" src="" />
 
 ---
 
 RPT3000:
 
-<img width="892" height="521" alt="image" src="https://github.com/user-attachments/assets/1df777ab-b95b-4065-b23a-e6e66e51c843" />
+<img width="892" height="521" alt="image" src="" />
 
 ---
 
